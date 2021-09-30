@@ -91,24 +91,15 @@
 
 	<script>
 	
-	document.getElementById("buscar").onclick = function() {
-        var valor = document.getElementById('capaUrl').value;
-        
-   
-		document.getElementById('apresentaImg').src = valor;
-
-    };
-	
-
-        const $titulo = document.querySelector('[name="titulo"');
+	 	const $titulo = document.querySelector('[name="titulo"');
         const $dataLancamento = document.querySelector('[name="dataLancamento"');
         const $diretor = document.querySelector('[name="diretor"');
         const $descricao = document.querySelector('[name="descricao"');
         const $duracao = document.querySelector('[name="duracao"');
         const $capaUrl = document.querySelector('[name="capaUrl"');
-    
-        $titulo.addEventListener("blur", infosDoEvento => {
-            const filme = infosDoEvento.target.value;
+    	
+        buscar.addEventListener('click',function(){
+            const filme = document.getElementById('titulo').value;
             fetch("http://www.omdbapi.com/?apikey=3033e6e0&t=" + filme)
 
                     .then(respostaDoServer => {
@@ -123,10 +114,13 @@
                         $duracao.value = dadosDoFilme.Runtime;
                         $capaUrl.value = dadosDoFilme.Poster;                     
                         
+
+						document.getElementById('apresentaImg').src = dadosDoFilme.Poster; 
+                    
                     });
+
+
         });
-        
-        
         
         
 

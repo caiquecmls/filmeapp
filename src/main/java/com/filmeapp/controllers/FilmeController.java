@@ -1,9 +1,14 @@
 package com.filmeapp.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.filmeapp.models.Filme;
 import com.filmeapp.repository.FilmeRepository;
@@ -25,4 +30,19 @@ public class FilmeController {
 		return "redirect:/filme";
 		
 	}
+	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView movieList(Filme filme) {
+		ModelAndView mv = new ModelAndView("/index");
+		Iterable<Filme> filmes = filmeRepository.findAll();
+		mv.addObject("filmes", filmes);
+		return mv;
+	}
+	
+	@GetMapping("/{id}/deletar")
+	public String idFilme(@PathVariable Long id) {
+		filmeRepository.deleteById(id);
+		return "redirect:/";
+	}
+	
 }
