@@ -50,11 +50,12 @@
 			<tr th:each="filme : ${filmes}">
 				<h2 th:text="${filme.titulo}"></h2>
 				<img th:src="${filme.capaUrl}"></img>
+			<div class="input-field col s1 ">
 				<td><a th:href="@{/{id}/deletar(id=${filme.id})}" class="waves-effect"><i class="material-icons center red-text text-darken-2">delete</i></a>
-				
+				<td><a th:href="@{/{id}/atualizar(id=${filme.id})}" class="waves-effect"><i class="material-icons center orange-text text-lighten-1">edit</i></a>			
+			</div>
 			</tr>
-			
-		</div>
+	  </div>
 	</div>
 
 </body>

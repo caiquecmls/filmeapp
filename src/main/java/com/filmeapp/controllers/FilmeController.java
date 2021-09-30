@@ -4,6 +4,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,9 +41,22 @@ public class FilmeController {
 	}
 	
 	@GetMapping("/{id}/deletar")
-	public String idFilme(@PathVariable Long id) {
+	public String deleteFilme(@PathVariable Long id) {
 		filmeRepository.deleteById(id);
 		return "redirect:/";
 	}
 	
+	@GetMapping("/{id}/atualizar")
+	public ModelAndView alterarFilme(@PathVariable Long id, Filme filme) {
+		Optional<Filme> filmeUpdate = filmeRepository.findById(id);
+		return new ModelAndView("filme/updateFilme").addObject("filmeUpdate", filmeUpdate);
+	}
+	
+//	@RequestMapping(value = "/update", method = RequestMethod.POST)
+//	public String salvarUpdate(Filme filme, Long id) {
+//		Filme filme = filmeRepository.(id);
+//		filmeRepository.save(filme);
+//		return "redirect:/filme";
+//		
+//	}
 }
