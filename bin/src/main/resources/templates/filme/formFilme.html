@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
+	
+
+
+<meta charset="ISO-8859-1">
+<title>Adicionar Filme</title>
+</head>
+<body>
+	
+	<div style="text-align: center; margin-top: 5%">
+	<img src="https://aepedome.net/cinepedome/wp-content/uploads/2020/01/PIPOCA.jpg"  id="apresentaImg" width=200 height=300>
+	</div>
+
+	<div class="container">
+		<form action="/filme" method="POST" class="col s12">
+
+			<div class="row">
+				<div class="input-field col s4">
+					<label for="nome">titulo:</label> <input type="text" id="titulo"name="titulo" required>
+				</div>
+
+
+				<div class="field">
+					<input type="hidden" id="dataLancamento" name="dataLancamento">
+				</div>
+
+				<div class="field">
+					<input type="hidden" id="diretor" name="diretor">
+				</div>
+
+				<div class="field">
+					<input type="hidden" id="descricao" name="descricao">
+				</div>
+
+				<div class="field">
+					<input type="hidden" id="duracao" name="duracao">
+				</div>
+
+				<div class="field">
+					<input type="hidden" id="capaUrl" name="capaUrl">
+				</div>
+
+				<div class="input-field col s2">
+					<label for="nota">nota:</label> <input type="text" id="nota"
+						name="nota">
+				</div>
+
+				<div class="input-field col s4">
+					<label for="comentario">comentario:</label> <input type="text"
+						id="comentario" name="comentario">
+				</div>
+			</div>
+
+
+			<div class="input-field col s1 ">
+				<button class="btn waves-effect waves-light" type="button"
+					name="action" id="buscar">
+					Buscar <i class="material-icons right"></i>
+				</button>
+
+				<button class="btn waves-effect waves-light" type="submit"
+					name="action" id="salvar">
+					Salvar <i class="material-icons right">save</i>
+				</button>
+			</div>
+
+
+
+		</form>
+	</div>
+
+	<script>
+	
+	document.getElementById("buscar").onclick = function() {
+        var valor = document.getElementById('capaUrl').value;
+        
+   
+		document.getElementById('apresentaImg').src = valor;
+
+    };
+	
+
+        const $titulo = document.querySelector('[name="titulo"');
+        const $dataLancamento = document.querySelector('[name="dataLancamento"');
+        const $diretor = document.querySelector('[name="diretor"');
+        const $descricao = document.querySelector('[name="descricao"');
+        const $duracao = document.querySelector('[name="duracao"');
+        const $capaUrl = document.querySelector('[name="capaUrl"');
+    
+        $titulo.addEventListener("blur", infosDoEvento => {
+            const filme = infosDoEvento.target.value;
+            fetch("http://www.omdbapi.com/?apikey=3033e6e0&t=" + filme)
+
+                    .then(respostaDoServer => {
+                        return respostaDoServer.json();
+                    })
+                    .then(dadosDoFilme => {
+                        console.log(dadosDoFilme);
+                        $titulo.value = dadosDoFilme.Title;
+                        $dataLancamento.value = dadosDoFilme.Released;
+                        $diretor.value = dadosDoFilme.Director;
+                        $descricao.value = dadosDoFilme.Plot;
+                        $duracao.value = dadosDoFilme.Runtime;
+                        $capaUrl.value = dadosDoFilme.Poster;                     
+                        
+                    });
+        });
+        
+        
+        
+        
+
+    </script>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</body>
+</html>
