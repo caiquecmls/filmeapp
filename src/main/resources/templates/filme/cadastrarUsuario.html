@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="app/jquery-3.6.0.js"></script>
+<title>Insert title here</title>
+
+</head>
+
+
+
+<style>
+
+body{
+width: 80%;
+margin: auto;
+
+
+}
+
+.container label,input{
+	display: block;
+	margin-bottom: 10px;
+
+
+}
+
+.container{
+	border: 2px solid blue;
+	padding: 10px;
+	width: fit-content;
+	margin: auto;
+
+
+}
+
+.container img{
+	max-width: 150px;
+	max-height: 150px;
+	display: block;
+	margin: auto auto 5px auto;
+
+}
+
+.btn-default{
+	display: block;
+	margin: auto;
+}
+
+#file{
+	display:none;
+}
+
+.btn-default{
+	cursor:pointer;
+}
+
+</style>
+
+
+
+<body>
+
+
+	<form action="/salvarUsuario" method="POST">
+	
+		<div class="container">
+		<input type="hidden" name="imgPerfil" id="imgPerfil" />
+		<input type="file" id="file" name="file" onchange="uploadFile();"  class="inputFile" required/>
+			<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" id="img-default" name="img-default">
+			<label for="file" class="btn-default">Add imagem</label>
+			<label>Nome</label>
+			<input type="text" id="nome" name="user">
+			<label>E-mail</label>
+			<input type="text" id="email" name="email">
+			<label>Senha</label>
+			<input type="password" id="senha" name="senha">
+			<input type="submit" value="enviar" class="btn-default">
+		</div>
+			
+	</form>
+
+</body>
+
+<script  type="text/javascript">
+
+function uploadFile(){
+	var target = document.querySelector("img");
+	var file = document.querySelector("input[type=file]").files[0];
+	var reader = new FileReader();
+	
+	reader.onloadend = function(){
+		target.src = reader.result;
+		document.getElementById("imgPerfil").value = reader.result; // seta o valor da imagem ao intputtext urlimagemBase64
+	};
+	
+	if(file){
+		reader.readAsDataURL(file);
+	}else{
+		target.src="";
+	}
+};
+
+</script>
+
+
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>listarUsuario</title>
+</head>
+
+<style>
+
+img{
+	width:150px;
+	heigth:150px;
+}
+
+
+</style>
+
+
+<body>
+
+	<div >
+		<div >
+			<tr th:each="usuario : ${usuarios}">
+					<h2 th:text="${usuario.user}"></h2>
+					<img th:src="${usuario.imgPerfil}"></img>
+
+				<div >
+					<td><a th:href="@{/{id}/deletarUsuario(id=${usuario.id})}" ><i>delete</i></a></td>
+					<td><a th:href="@{/{id}/atualizarUsuario(id=${usuario.id})}" ><i >edit</i></a></td>			
+				</div>
+			</tr>
+	    </div>
+	</div>
+
+</body>
+</html>
