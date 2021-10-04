@@ -29,7 +29,7 @@ public class UsuarioController {
 	@RequestMapping(value = "/salvarUsuario", method = RequestMethod.POST)
 	public String submit(Usuario usuario) {
 		usuarioRepository.save(usuario);
-		return "redirect:/CadastrarUsuario";
+		return "redirect:/ListarUsuario";
 		
 	}
 	
