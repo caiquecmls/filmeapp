@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+
+        .div-main{
+            background-color: yellow;
+            overflow: auto;
+            position: fixed;
+            height: 100%;
+        }
+
+        .section-left{
+            background-image:url(img/fundo_filmeapp.jpg);
+
+
+            width: 50%;
+            float: left;
+            height: 100%;
+        }
+
+    
+
+        .section-left h1{
+            background: rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            color: white;
+            text-shadow: black;
+            text-align: center;
+            margin-top: 200px;
+            font-size: 50px;
+
+            
+        }
+
+        .section-right{
+            background-image: linear-gradient(45deg, black,gray);
+            background-color: blue;
+            width: 50%;
+            float: left;
+            height: 100%;
+            
+        }
+
+        .section-right input{
+            display: block;
+            
+            background: rgba(196, 196, 196, 0.75);
+            border-radius: 5px;
+            padding: 10px;
+            border: none;
+            outline: none;
+            margin: auto;
+            margin-bottom: 10px;
+            width: 200px;
+        }
+
+        .section-right form{
+            margin: auto;
+            width: fit-content;
+            padding: 15px;
+            background-color: #A1A1A1 ;
+            text-align: center;
+            margin-top: 100px;
+        
+          
+        }
+
+        form img{
+            width: 150px;
+            height: 150px;
+            border-radius: 168.5px;
+            margin-bottom: 10px;
+        }
+
+        form .btn-default{
+
+            background: rgba(52, 146, 247, 0.8);
+            border-radius: 50px;
+            
+            
+        }
+
+
+        footer{
+        background-color:#1E1C1C;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        color: white;
+    }
+
+    li a{
+        color: white;
+        font-size: 20px;
+    }
+
+    footer .copyright{
+        background-color: black;
+        margin-bottom: 0;
+
+    }
+
+    .copyright{
+        color: #484848;
+        font-size: 20px;
+    }
+
+    footer li{
+        list-style: none;
+        display: inline;
+        margin-right: 10px;
+        color: white;
+        
+    }
+
+
+    </style>
+
+<body>
+    <div class="div-main">
+       
+        <section class="section-left">
+            <article>
+                <h1>Bem vindo, Crie suas listas de filnmes e compartilhe com os amigos</h1>
+            </article>
+        </section>
+      
+        <section class="section-right">
+            <main>
+                <form>
+                    <img src=" https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png">
+                    <input type="hidden">
+                    <input type="text" placeholder="Nome">
+                    <input type="text" placeholder="E-mail">
+                    <input type="text" placeholder="Password">
+                    <input type="submit" value="Criar nova conta" class="btn-default">
+
+                </form>
+            </main>
+        </section>
+    
+
+    </div>
+    <footer>
+        <ul>
+            <li><a href="https://github.com/"><i class="fab fa-github-square"></i></a></li>
+            <li><a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/caique_moreira7/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a></li>
+        </ul>
+        <p>
+            É um fato estabelecido há muito tempo que um leitor se 
+            distrairá com o conteúdo legível de uma página ao examinar 
+            seu layout. O objetivo de usar Lorem Ipsum é que ele tem uma 
+            distribuição de letras mais ou menos normal,
+        </p>
+        <p class="copyright">&copy; 2020 Copyright: Nome</p>
+    </footer>
+
+
+
+
+</body>
+
+<script src="https://kit.fontawesome.com/8fe6dc2e5a.js" crossorigin="anonymous"></script>
+</html>

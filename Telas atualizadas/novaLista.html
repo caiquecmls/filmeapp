@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+
+        body{
+            margin: auto;
+            padding: 0;
+
+        }
+
+        header{
+            box-sizing: border-box;
+            position: relative;
+            top:-15px;;
+            width: 100%;
+        }
+
+        .div-header{
+            background-image: url(img/cinema.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: -37px;
+            width: 100%;
+            height: 300px;
+        }
+
+        .div-header h1{
+            color: #FFFFFF;
+            margin-left: 50px;
+            margin-top: 100px;
+            font-size: 50px;
+
+            display: inline-block;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+
+        nav ul{
+            text-align: center;
+            background: #1E1C1C;
+           
+
+        }
+        nav li{
+
+            color: #FFFFFF;
+            list-style: none;
+            display: inline-block;
+            text-align: right;
+            margin-right: 160px;
+            font-size: 20px;
+            padding: 5px;
+            
+ 
+        }
+
+        .main-form{
+            width: 30%;
+            margin: auto;
+            margin-top: 100px;
+            
+        }
+
+        .main-form label{
+            font-size: 20px;
+            margin-top: 10px;
+            width: fit-content;
+            display: block;
+      
+            
+
+        }
+
+        .btn-submite{
+            background-color: rgba(4, 105, 33, 0.8);
+            border-radius: 50px;
+            
+        }
+
+        .btn-default, textarea{
+            width: 100%;
+            height: 35px;
+            background: #C4C4C4;
+            border-radius: 5px;
+        }
+
+
+       
+  
+
+
+
+        
+   
+
+
+
+
+
+
+
+footer{
+            background-color:#1E1C1C;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+
+
+        li a{
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        footer .copyright{
+            background-color: black;
+            margin-bottom: 0;
+
+        }
+
+        .copyright{
+            color: #484848;
+            font-size: 20px;
+        }
+
+        footer li{
+            list-style: none;
+            display: inline;
+            margin-right: 10px;
+            color: white;
+            
+        }
+
+</style>
+
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Minha lista de filmes</a></li>
+                <li><a href="#">Minha conta</a></li>
+                <li><a href="#">Filmes lancamentos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="div-header">
+        <h1>Nova Lista</h1>
+    </div>
+
+    <main class="main-form">
+        <form>
+            <label>Titulo da lista</label>
+            <input type="text" class="btn-default">
+            <label>Gênero da Lista</label>
+            <input type="text" class="btn-default">
+            <label>Descrição sobre a lista</label>
+            <textarea cols="30" rows="10"></textarea>
+            <input type="submit" value="Salvar" class="btn-submite">
+        </form>
+    </main>
+
+
+
+    
+    <footer>
+
+        <ul>
+            <li><a href="https://github.com/"><i class="fab fa-github-square"></i></a></li>
+            <li><a href="https://www.linkedin.com/feed/"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://www.instagram.com/caique_moreira7/"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a></li>
+        </ul>
+        <p>
+            É um fato estabelecido há muito tempo que um leitor se 
+            distrairá com o conteúdo legível de uma página ao examinar 
+            seu layout. O objetivo de usar Lorem Ipsum é que ele tem uma 
+            distribuição de letras mais ou menos normal,
+        </p>
+        <p class="copyright">&copy; 2020 Copyright: Nome</p>
+    </footer>
+
+    
+    
+</body>
+
+<script src="https://kit.fontawesome.com/8fe6dc2e5a.js" crossorigin="anonymous"></script>
+
+</html>
